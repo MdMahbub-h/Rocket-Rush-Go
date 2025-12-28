@@ -1448,6 +1448,29 @@ class Game extends Phaser.Scene {
           })
           .setOrigin(0.5)
           .setDepth(2);
+        this.playText.setInteractive({ useHandCursor: true });
+        this.playText.on("pointerdown", () => {
+          this.tweens.add({
+            targets: [this.playText],
+            scale: 0.8,
+            duration: 100,
+
+            onComplete: () => {
+              this.tweens.add({
+                targets: [this.playText],
+                scale: 1,
+                duration: 100,
+                onComplete: () => {
+                  this.start();
+                  this.playText.destroy();
+                  this.playerImg.destroy();
+                  this.option1.destroy();
+                  this.title.destroy();
+                },
+              });
+            },
+          });
+        });
       });
       this.option1 = this.add
         .image(400, 950, "goToLeaderboard")
@@ -1456,7 +1479,6 @@ class Game extends Phaser.Scene {
         .setAlpha(1)
         .setScale(1);
       this.option1.setInteractive();
-      this.playText.setInteractive({ useHandCursor: true });
       this.option1.on("pointerdown", () => {
         this.tweens.add({
           targets: [this.option1],
@@ -1470,29 +1492,6 @@ class Game extends Phaser.Scene {
               onComplete: () => {
                 this.screen = "leaderboard";
                 this.scene.restart();
-              },
-            });
-          },
-        });
-      });
-
-      this.playText.on("pointerdown", () => {
-        this.tweens.add({
-          targets: [this.playText],
-          scale: 0.8,
-          duration: 100,
-
-          onComplete: () => {
-            this.tweens.add({
-              targets: [this.playText],
-              scale: 1,
-              duration: 100,
-              onComplete: () => {
-                this.start();
-                this.playText.destroy();
-                this.playerImg.destroy();
-                this.option1.destroy();
-                this.title.destroy();
               },
             });
           },
