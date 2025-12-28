@@ -33,7 +33,7 @@ class Game extends Phaser.Scene {
   }
 
   preload() {
-    this.load.setBaseURL("public/assets/");
+    this.load.setBaseURL("assets/");
     this.load.plugin(
       "rexroundrectangleplugin",
       "plugins/rexroundrectangleplugin.min.js",
@@ -2009,3 +2009,4 @@ window.oncontextmenu = (event) => {
 console.warn = () => {
   return false;
 };
+
