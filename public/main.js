@@ -472,6 +472,7 @@ class Game extends Phaser.Scene {
                 this.option1Text,
                 this.option2,
                 this.termsText,
+                this.usernameInput,
               ];
 
               this.elements.forEach((element) => {
@@ -620,6 +621,7 @@ class Game extends Phaser.Scene {
                 this.scoreText,
                 this.playButton,
                 this.playTitle,
+                this.usernameInput,
               ];
 
               this.elements.forEach((element) => {
@@ -2009,4 +2011,3 @@ window.oncontextmenu = (event) => {
 console.warn = () => {
   return false;
 };
-
