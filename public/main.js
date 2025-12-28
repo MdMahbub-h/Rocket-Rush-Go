@@ -1438,16 +1438,17 @@ class Game extends Phaser.Scene {
 
     if (!this.instructionGiven) {
       this.title = this.physics.add.sprite(400, 250, "title").setScale(1.15);
-      this.playText = this.add
-        .text(400, 800, "Click to Play", {
-          fontFamily: "MyLocalFont",
-          stroke: "#9d3303",
-          fontSize: "50px",
-          strokeThickness: 6,
-        })
-        .setOrigin(0.5)
-        .setDepth(2);
-
+      document.fonts.load("32px MyLocalFont").then(() => {
+        this.playText = this.add
+          .text(400, 800, "Click to Play", {
+            fontFamily: "MyLocalFont",
+            stroke: "#9d3303",
+            fontSize: "50px",
+            strokeThickness: 6,
+          })
+          .setOrigin(0.5)
+          .setDepth(2);
+      });
       this.option1 = this.add
         .image(400, 950, "goToLeaderboard")
         .setDepth(5)
