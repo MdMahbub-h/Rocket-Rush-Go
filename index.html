@@ -4,7 +4,7 @@
     <style>
       @font-face {
         font-family: "MyLocalFont";
-        src: url("assets/FB.ttf");
+        src: url("/assets/FB.ttf");
       }
     </style>
     <meta charset="utf-8" />
@@ -17,23 +17,23 @@
       rel="preload"
       type="font/otf"
       as="font"
-      href="assets/fonts/font.otf"
+      href="/assets/fonts/font.otf"
       crossorigin="font"
     />
 
-    <script src="lib/phaser.min.js"></script>
+    <script src="/lib/phaser.min.js"></script>
 
     <title>Rocket Rush Go</title>
     <link
       rel="icon"
       type="image/png"
-      href="assets/player/bird-111.png"
+      href="/assets/player/bird-111.png"
     />
 
     <style>
       @font-face {
         font-family: RakeslyRG;
-        src: url(assets/fonts/font.otf);
+        src: url(/assets/fonts/font.otf);
       }
 
       ::-webkit-scrollbar {
@@ -156,7 +156,7 @@
 
       @media (min-width: 600px) {
         body {
-          background: url(assets/backgrounds/desktop.png) no-repeat
+          background: url(/assets/backgrounds/desktop.png) no-repeat
             center center fixed;
           -webkit-background-size: cover;
           -moz-background-size: cover;
@@ -168,12 +168,13 @@
   </head>
   <body>
     <div id="loader">
-      <img id="loadingImage" src="assets/loader.png" alt="Loading" />
+      <img id="loadingImage" src="/assets/loader.png" alt="Loading" />
     </div>
 
     <div id="game"></div>
 
-    <script src="main.js"></script>
+    <script src="/main.js"></script>
   </body>
 </html>
+
 
